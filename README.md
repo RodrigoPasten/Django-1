@@ -1,6 +1,6 @@
 # Django-1
 
-Por supuesto, aquí tienes la información reformateada para que sea compatible con GitHub:
+
 
 ## Ayuda Memoria para Proyecto en Django
 
