@@ -62,4 +62,3 @@ Si encuentras el error sobre las políticas de ejecución en PowerShell, sigue e
 3. Activar el ambiente: `source Nombre_Ambiente/bin/activate`
 4. Desactivar el ambiente: `deactivate`
 
-Recuerda que estos son resúmenes de los comandos. Consulta las fuentes correspondientes para obtener más detalles y ejemplos.
