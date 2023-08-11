@@ -137,7 +137,7 @@ python manage.py runserver
 ```
 
 
-### 2.5. Agregar Jazzmin al Panel de Administración
+### 2.5. Agregar Jazzmin al Panel de Administración (Opcional)
 
 Jazzmin es un tema personalizado para el panel de administración de Django que brinda un aspecto moderno y elegante. A continuación, te mostraré cómo agregar Jazzmin a tu proyecto:
 
