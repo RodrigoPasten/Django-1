@@ -135,11 +135,82 @@ python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
 ```
+¡Por supuesto! Aquí te agrego un apartado para agregar Jazzmin, que es un tema moderno y atractivo para el panel de administración de Django:
 
-2.5 Acceder al sitio de administración de Django
+### 2.5. Agregar Jazzmin al Panel de Administración
 
-   - Abrir la URL: http://127.0.0.1:8000/admin
-   - Iniciar sesión con el usuario y contraseña del superusuario
+Jazzmin es un tema personalizado para el panel de administración de Django que brinda un aspecto moderno y elegante. A continuación, te mostraré cómo agregar Jazzmin a tu proyecto:
+
+2.5.1 Instalar Jazzmin
+
+Instala el paquete de Jazzmin en tu entorno virtual:
+
+```bash
+pip install jazzmin
+```
+
+2.5.2 Configurar Jazzmin
+
+Agrega 'jazzmin' a la lista de aplicaciones instaladas en tu archivo `settings.py`:
+
+```python
+INSTALLED_APPS = [
+    ...
+    'jazzmin',
+    'laboratorio.apps.LaboratorioConfig',
+]
+```
+
+2.5.3 Personalizar la Configuración de Jazzmin
+
+En tu archivo `settings.py`, agrega la configuración de Jazzmin al final del archivo:
+
+```python
+# Configuración de Jazzmin
+JAZZMIN_SETTINGS = {
+    "site_title": "Laboratorio Admin",
+    "site_header": "Laboratorio Administration",
+    "site_logo": "path/to/your/logo.png",  # Ruta al logotipo de tu sitio
+    "welcome_sign": "Bienvenido al panel de administración de Laboratorio",
+    "search_model": "laboratorio.Producto",  # Modelo para buscar en la barra de búsqueda
+    "user_avatar": None,  # Puedes establecer la ruta al avatar de usuario si lo deseas
+    "show_sidebar": True,
+    "navigation_expanded": False,
+    "hide_apps": [],
+    "hide_models": [],
+    "order_with_respect_to": [],
+}
+```
+
+2.5.4 Agregar la URL de Jazzmin
+
+En tu archivo `config/urls.py`, agrega la URL de Jazzmin al patrón de URL de Django:
+
+```python
+from django.urls import path
+from django.contrib import admin
+from django.conf import settings
+
+urlpatterns = [
+    ...
+    path('admin/', admin.site.urls),
+]
+
+# Agregar la URL de Jazzmin solo en modo DEBUG
+if settings.DEBUG:
+    urlpatterns += [path('admin/', include('jazzmin.urls'))]
+```
+
+2.5.5 Ejecutar el Servidor y Acceder al Nuevo Panel de Administración
+
+```bash
+python manage.py runserver
+```
+
+
+---
+
+
 
 2.6 Añadir usuarios, laboratorios y productos a través del Admin
    - Realizar los cambios y guardarlos
