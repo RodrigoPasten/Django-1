@@ -135,7 +135,7 @@ python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
 ```
-¡Por supuesto! Aquí te agrego un apartado para agregar Jazzmin, que es un tema moderno y atractivo para el panel de administración de Django:
+
 
 ### 2.5. Agregar Jazzmin al Panel de Administración
 
